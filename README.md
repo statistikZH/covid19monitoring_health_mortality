@@ -1,5 +1,7 @@
 # covid19monitoring_health_mortality - inofficial machine readable dataset
 
+**work in progress, sofar only 2019 data are available, updates later today / this week.**
+
 The original data are published by the Swiss Federal Statistical Office (FSO) here: 
 https://www.bfs.admin.ch/bfs/de/home/statistiken/gesundheit/gesundheitszustand/sterblichkeit-todesursachen.html
 
@@ -11,12 +13,13 @@ We do our best to make our effort transparent and reproducible. The below sectio
 
 ## Dataset Description
 
-Simply download .csv datasets from the data/ folder of this repository. There is one .csv file per year. 
+Simply download .csv datasets from the [data/](https://github.com/statistikZH/covid19monitoring_health_mortality/tree/master/data) folder of this repository. Github newbies: Please note github renders .csv files, so if you just want the data w/o looking at it online, switch to Raw before downloading, e.g., [2019.csv raw](https://raw.githubusercontent.com/statistikZH/covid19monitoring_health_mortality/master/data/2019.csv).  There is one .csv file per year. 
 All data are available as long format .csv files. The dimensions are: **year, week, age_group**. The value column is 
 simply called **deaths**. 
 
 **Visualisation Suggestion Based in Random data**
 
+![visualisation example](example.png)
 
 
 ```r
@@ -65,11 +68,12 @@ gg + geom_line() +
 
 ## Reproduce Data Extraction
 
+The below sections describe our steps from .pdf to .csv. You will need the [R Language for Statistical Computing](https://www.r-project.org/) and [pdf2svg](https://github.com/dawbarton/pdf2svg) to reproduce the extraction process. 
 
 ![overlap](overlap.png)
-The chart above shows an overlay created in Gimp
+The chart above shows an overlay created in Gimp. A chart generated with base R is put above the original graph with reduced opacity, so the image is transparent enough to see the original FSO graph. As you can see our approximation
+is pretty neat. The difference between the lines is hard to spot. 
 
-The below sections describe our steps from .pdf to .csv. You will need the [R Language for Statistical Computing](https://www.r-project.org/) and [pdf2svg](https://github.com/dawbarton/pdf2svg) to reproduce the extraction process. 
 
 1. Download .pdf for years 2013-2020 from the table at the bottom of the [FSO page](https://www.bfs.admin.ch/bfs/de/home/statistiken/gesundheit/gesundheitszustand/sterblichkeit-todesursachen.html)
 
