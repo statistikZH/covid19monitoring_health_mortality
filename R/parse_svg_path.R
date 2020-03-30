@@ -49,6 +49,14 @@ parse_svg_path <- function(p) {
                x = numbers,
                y = NA
              )
+           },
+           "z" = {
+             data.table(
+               command = "closepath",
+               relative = FALSE,
+               x = NA,
+               y = NA
+             )
            })
   }))
 }
