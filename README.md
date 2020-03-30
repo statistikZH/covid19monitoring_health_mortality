@@ -7,7 +7,7 @@ https://www.bfs.admin.ch/bfs/de/home/statistiken/gesundheit/gesundheitszustand/s
 
 This project extracts data from the graphs of the original publication in order to facilitate analysis and scientific research by providing **machine readable information**. This repository contains **machine readable information** on the **weekly number of deaths in Switzerland** for all completed years from **2013-2019** and **parts of 2020**. We are also making an effort to deliver updates when the 2020 data are updated by its original provider. 
 
-**Please use this inoffical dataset carefully and verify your conclusions and publications by comparing them to the original source! Note also that our extraction is an approximation:** Hence we **floored** all numbers to 
+**Please use this inoffical dataset carefully and verify your conclusions and publications by comparing them to the original source! Note also that our extraction is an approximation:** Hence we **floored** all numbers as we assumed statistics were absolute reported numbers.
 
 We do our best to make our effort transparent and reproducible. The below sections will describe the datasets created by our extraction as well as how to reproduce the extraction procedure.
 
