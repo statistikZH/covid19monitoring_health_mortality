@@ -23,8 +23,10 @@ extract_data <- function(path, year) {
 
   # Anything shorter than 2 units is either an axis tick or a data point
   # We don't need those
+  minitick_threshold <- 20
   is_minitick <- sapply(paths_parsed, function(x) {
-    x[1, x] - x[2, x] < 2 && x[1, y] - x[2, y] < 2 && nrow(x) == 2
+    lngth <- x[, (x[1]-x[2])*(x[1]-x[2]) + (y[1]-y[2])*(y[1]-y[2])]
+    lngth < minitick_threshold && nrow(x) == 2
   })
 
   # ... neither the vertical gridlines
@@ -43,7 +45,10 @@ extract_data <- function(path, year) {
   horizontal_ticks_trans <- transforms[is_h_tick]
 
   # Establish scale (the distance between two gridlines corresponds to 200 deaths)
-  units_per_200 <- horizontal_ticks_trans[, diff(sort(y)[1:2])]
+  units_per_200 <- horizontal_ticks_trans[, {
+    yy <- unique(y) # Because of course the gridlines are doubled up. Why not...?
+    diff(sort(yy)[1:2])
+  }]
 
   # Establish baseline (there is no gridline at 0 so we use the one at 200 and add 1 tick)
   zero <- horizontal_ticks_trans[, max(y) + units_per_200]
@@ -76,7 +81,9 @@ extract_data <- function(path, year) {
     ook <- 200 * (y_abs - zero) / units_per_200
 
     # The svg y axis starts at the top. Shift the series up to account for that.
-    floor(ook - 2*ook[1])
+    ook <- floor(ook - 2*ook[1])
+
+    ook[1:min(length(ook), 52)]
   })
 
   # Assume old people die more often than young ones
