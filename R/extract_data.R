@@ -81,12 +81,13 @@ extract_data <- function(path, year) {
 
   # Assume old people die more often than young ones
   series <- series[order(sapply(series, mean))]
+  n_values <- length(series[[1]])
 
   # Done
   data.table(
     year = year,
-    week = 1:52,
-    age_group = rep(c("under_65", "65_and_up"), each = 52),
+    week = seq(n_values),
+    age_group = rep(c("under_65", "65_and_up"), each = n_values),
     deaths = c(series[[1]], over_65 = series[[2]])
   )
 }
