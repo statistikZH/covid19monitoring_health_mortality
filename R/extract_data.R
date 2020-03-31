@@ -86,7 +86,7 @@ extract_data <- function(path, year) {
   data.table(
     year = year,
     week = 1:52,
-    under_65 = series[[1]],
-    over_65 = series[[2]]
+    age_group = rep(c("under_65", "65_and_up"), each = 52),
+    deaths = c(series[[1]], over_65 = series[[2]])
   )
 }
