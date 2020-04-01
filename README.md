@@ -1,7 +1,5 @@
 # covid19monitoring_health_mortality - inofficial machine readable dataset
 
-**work in progress, sofar only 2019 data are available, updates later today / this week.**
-
 The original data are published by the Swiss Federal Statistical Office (FSO) here: 
 https://www.bfs.admin.ch/bfs/de/home/statistiken/gesundheit/gesundheitszustand/sterblichkeit-todesursachen.html
 
