@@ -3,6 +3,9 @@
 The original data are published by the Swiss Federal Statistical Office (FSO) here: 
 https://www.bfs.admin.ch/bfs/de/home/statistiken/gesundheit/gesundheitszustand/sterblichkeit-todesursachen.html
 
+Methodological comments:
+https://www.bfs.admin.ch/bfs/en/home/statistics/health/state-health/mortality-causes-death.assetdetail.12547462.html
+
 This project extracts data from the graphs of the original publication in order to facilitate analysis and scientific research by providing **machine readable information**. This repository contains **machine readable information** on the **weekly number of deaths in Switzerland** for all completed years from **2013-2019** and **parts of 2020**. We are also making an effort to deliver updates when the 2020 data are updated by its original provider. 
 
 **Please use this inoffical dataset carefully and verify your conclusions and publications by comparing them to the original source! Note also that our extraction is an approximation:** Hence we **floored** all numbers as we assumed statistics were absolute reported numbers.
